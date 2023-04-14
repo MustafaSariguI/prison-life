@@ -1,0 +1,13 @@
+--[[Players Service and Workspace Service]]__,___=game:GetService"Players",game:GetService"Workspace"
+--[[Player CFrame]]_=__.LocalPlayer.Character:WaitForChild"HumanoidRootPart".Position
+--[[Remote Event]]____=___.Remote.ItemHandler
+
+for _,v in next, workspace.Prison_ITEMS.giver:GetDescendants() do
+    if v:IsA"Model" then
+        local _=v:FindFirstChild"ITEMPICKUP"
+        __.LocalPlayer.Character:MoveTo(_.Position)
+        task.wait(0.1)
+        ____:InvokeServer(_)
+    end
+end
+__.LocalPlayer.Character:MoveTo(_)
